@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="style.css"> <!-- Assurez-vous de mettre le bon chemin vers votre fichier style.css -->
+    <title>Lapsus$Market</title>
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="logo"><h1>Lapsus$Group</h1></div>
+        <ul class="menu">
+            <li><a href="#" class="active">Accueil</a></li>
+            <li><a href="#">Nouveautés</a></li>
+            <li><a href="#"><i class="fas fa-user"></i></a></li>
+            
+            <li class="panier-icon"><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+            
+            <li class="menu-deroulant-icon"><a href="#"><i class="fas fa-bars"></i></a>
+                <ul class="menu-deroulant">
+                    <li><a href="#">PC/Laptops</a></li>
+                    <li><a href="#">Disque dur</a></li>
+                    <li><a href="#">Téléphone</a></li>
+                    <li><a href="#">Assorti/PC</a></li>
+                    <li><a href="#">Drone</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <script>
+        // JavaScript pour gérer l'affichage du menu déroulant
+        document.querySelector('.menu-deroulant-icon').addEventListener('click', function(event) {
+            event.stopPropagation(); // Empêcher la propagation de l'événement click pour éviter la fermeture immédiate
+            var menuDeroulant = document.querySelector('.menu-deroulant');
+            menuDeroulant.style.display = (menuDeroulant.style.display === 'block') ? 'none' : 'block';
+        });
+
+        // Fermer le menu déroulant lorsqu'on clique en dehors de celui-ci
+        window.addEventListener('click', function(event) {
+            var menuDeroulant = document.querySelector('.menu-deroulant');
+            if (!event.target.matches('.menu-deroulant-icon') && !event.target.closest('.menu-deroulant')) {
+                menuDeroulant.style.display = 'none';
+            }
+        });
+
+        // Rediriger vers les 4 premiers produits en fonction de la catégorie choisie
+        var categories = document.querySelectorAll('.menu-deroulant li a');
+        categories.forEach(function(category, index) {
+            category.addEventListener('click', function() {
+                var produits = document.querySelectorAll('.section_produits .carte');
+                var startIndex = index * 4;
+                var endIndex = startIndex + 4;
+
+                // Masquer tous les produits
+                produits.forEach(function(produit) {
+                    produit.style.display = 'none';
+                });
+
+                // Afficher les produits de la catégorie sélectionnée
+                for (var i = startIndex; i < endIndex && i < produits.length; i++) {
+                    produits[i].style.display = 'block';
+                }
+            });
+        });
+    </script>
+
+    <section class="content">
+        <h1>Bienvenue</h1>
+        <p>Sur le market place officielle de Lapsus$Group.<br>
+    </p>
+        <button>DECOUVRIR</button>
+    </section>
+    <h1 class="produits_texte">Nos meilleures ventes</h1>
+    <section class="section_produits">
+    <div class="produits">
+        <div class="carte">
+            <div class="img"><img src="kisspng-pc-gamer-amd-fx-8300-hydra-geforce-gtx-1060-5b6349e93823a5.30804410153323364123.jpg"></div>
+            <div class="desc">kisspng-pc-gamer-amd-fx-8300-hydra-geforce-gtx-1060</div>
+            <div class="titre">Tour Gaming</div>
+            <div class="box">
+            <div class="prix">456€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="OIP (7).jpeg"></div>
+            <div class="desc">Laptops Mc Book</div>
+            <div class="titre">PC Portable</div>
+            <div class="box">
+            <div class="prix">200€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="Vibox-III-14-PC-Gamer-24-Ecran-Pack-8-Core-Intel-i7-10700F-Proceeur-4-8GHz-AMD-Radeon-RX-6500-XT-4Go-Carte-Graphique-16Go-RAM-240Go-D-1To-Disque-Dur-Windows-11-WiFi.jpg"></div>
+            <div class="desc">Ensemble setup gaming tour,ecran,clavier,souris,tapis de souris+Windows11 installer</div>
+            <div class="titre">Ensemble setup gaming</div>
+            <div class="box">
+            <div class="prix">1192€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="0197528003269_h_f_l_0.webp"></div>
+            <div class="desc">Laptops Lenovo</div>
+            <div class="titre">PC portable Lenovo</div>
+            <div class="box">
+            <div class="prix">279€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="OIP (1).jpeg"></div>
+            <div class="desc">Disque dur externe noir Toshiba</div>
+            <div class="titre">Disque dur noir 500GB</div>
+            <div class="box">
+            <div class="prix">52€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="OIP.jpeg"></div>
+            <div class="desc">Disque dur pc fixe</div>
+            <div class="titre">Disque dur pc fixe taille 1To </div>
+            <div class="box">
+            <div class="prix">155€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="OIP (2).jpeg"></div>
+            <div class="desc">Disque dur externe blanc</div>
+            <div class="titre">Disque dur taille 500GB</div>
+            <div class="box">
+            <div class="prix">67€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="P987033.jpg"></div>
+            <div class="desc">Disque dur gris</div>
+            <div class="titre">Disque dur externe taille 255GB</div>
+            <div class="box">
+            <div class="prix">38€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="samsung-galaxy-s9_2.png"></div>
+            <div class="desc">Galxies S9 couleur bleu</div>
+            <div class="titre">Android S9</div>
+            <div class="box">
+            <div class="prix">169,79€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div> 
+        <div class="carte">
+            <div class="img"><img src="545-5458483_samsung-galaxy-s9.png"></div>
+            <div class="desc">Galaxie S9 couleur rose</div>
+            <div class="titre">Android S9</div>
+            <div class="box">
+            <div class="prix">169,79€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="c924c1c6-166c-42e0-8c36-cd91e42d6b77-1_9f6cfcfd-7293-43c5-87e9-099d150c41e6.webp"></div>
+            <div class="desc">Galaxy Z Flip3 5G 256 Go - Noir</div>
+            <div class="titre">Galaxy Z Flip3-Noir</div>
+            <div class="box">
+            <div class="prix">420,96€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="b48fa3a5-cde0-4985-80be-716d284c229c-1_377ab50b-1f0a-4895-9a22-5d83d2f5e96f.webp"></div>
+            <div class="desc">Galaxy Z Flip4 128 Go - Gris </div>
+            <div class="titre">Galaxy Z Flip4-Gris</div>
+            <div class="box">
+            <div class="prix">456,00€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="51SGO2Ut3hL._AC_UL160_SR160,160_.jpg"></div>
+            <div class="desc">Clef USB noir tete bleu</div>
+            <div class="titre">Clef USB 25GB</div>
+            <div class="box">
+            <div class="prix">20€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="image.jpeg"></div>
+            <div class="desc">Clef USB tete noir</div>
+            <div class="titre">Clef USB 6GB</div>
+            <div class="box">
+            <div class="prix">12,90€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="SB016-3.jpg"></div>
+            <div class="desc">Clef USB tete bleu</div>
+            <div class="titre">Clef USB 64GB</div>
+            <div class="box">
+            <div class="prix">43,32€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="s-l300.jpg"></div>
+            <div class="desc">Clef USB tete noir</div>
+            <div class="titre">Clef USB 25GB</div>
+            <div class="box">
+            <div class="prix">19,90€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="OIP (8).jpeg"></div>
+            <div class="desc">Souris Gaming bleu/noir</div>
+            <div class="titre">Souris Gaming</div>
+            <div class="box">
+            <div class="prix">10,99€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="souris-gaming-kult-200-ref_KT7913_5.jpg"></div>
+            <div class="desc">Souris Gaming bleu/noir/blanc</div>
+            <div class="titre">Souris Gaming</div>
+            <div class="box">
+            <div class="prix">12,24€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="MOUMST1680_0.webp"></div>
+            <div class="desc">Souris Gaming bleu/noir</div>
+            <div class="titre">Souris Gaming</div>
+            <div class="box">
+            <div class="prix">9,95€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="71HPtyhEz8L._AC_SL1500_.jpg"></div>
+            <div class="desc">Souris Gaming avec des éclaire Bleu/noir</div>
+            <div class="titre">Souris Gaming</div>
+            <div class="box">
+            <div class="prix">18,64€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="71pDmbYSByL._SL1500_.jpg"></div>
+            <div class="desc">Clavier Gaming noir rétro-éclairant</div>
+            <div class="titre">Clavier azerty</div>
+            <div class="box">
+            <div class="prix">29,99€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="kisspng-computer-keyboard-laptop-computer-mouse-republic-o-5afbc49eb759a4.902072321526449310751.jpg"></div>
+            <div class="desc">Clavier Gaming noir rétro-éclairant</div>
+            <div class="titre">Clavier azerty</div>
+            <div class="box">
+            <div class="prix">29;99€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="fdit-clavier-silencieux-clavier-filaire-usb-104-to.webp"></div>
+            <div class="desc">Clavier azerty silencieux</div>
+            <div class="titre">Clavier azerty</div>
+            <div class="box">
+            <div class="prix">14,25€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+        <div class="carte">
+            <div class="img"><img src="71mFCC3zw+L._AC_SY355_.jpg"></div>
+            <div class="desc">Clavier qwerty gaming</div>
+            <div class="titre">Clavier qwerty</div>
+            <div class="box">
+            <div class="prix">21€</div>
+            <button class="achat">Acheter</button>
+        </div>
+        </div>
+
+    </section>
+</body>
+</html> 
